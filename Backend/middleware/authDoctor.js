@@ -1,0 +1,23 @@
+import jwt from 'jsonwebtoken'
+
+const authDoctor = (req, res, next) => {
+    const { dtoken } = req.headers;
+
+    if(!dtoken){
+        return res.json({ success : false, message : "not Authorized Login Again"});
+    }
+
+    try {
+        const token_decode = jwt.verify(dtoken, process.env.PRIVATE_KEY);
+        if(!req.body){
+            req.body={}
+        }
+        req.body.docId = token_decode.id;
+        next();
+    } catch (error) {
+        console.log(error);
+        res.json({ success : false, message : error.message});
+    }
+}
+
+export default authDoctor;
