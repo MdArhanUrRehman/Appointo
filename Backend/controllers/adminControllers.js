@@ -164,7 +164,6 @@ const adminDashboard = async (req, res) => {
             latestAppointments : appointments.reverse()
         }
 
-        console.log(dashData)
 
         res.json({ success : true, message : dashData});
     } catch (error) {

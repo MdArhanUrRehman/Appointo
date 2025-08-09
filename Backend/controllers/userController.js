@@ -31,7 +31,7 @@ const signUpUser = async (req, res) => {
 
     const newUser = new userModel(userData);
     const user = await newUser.save();
-    const token = jwt.sign({ id: user._id }, process.env.PRIVATE_KEY, JWT_SECRET, { expiresIn: "7d" });
+    const token = jwt.sign({ id: user._id }, process.env.PRIVATE_KEY, { expiresIn: "7d" });
 
     res.json({ success: true, message: token });
   } catch (error) {

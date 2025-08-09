@@ -14,8 +14,6 @@ const authUser = (req, res, next) => {
       req.body = {};
     }
 
-    // console.log(process.env.PRIVATE_KEY)
-
      const token_decode = jwt.verify(token, process.env.PRIVATE_KEY);
     //  console.log(token_decode)
      req.body.userId = token_decode.id;

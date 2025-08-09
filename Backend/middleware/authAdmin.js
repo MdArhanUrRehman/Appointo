@@ -7,9 +7,6 @@ const authAdmin = async (req, res, next) => {
             return res.json({ success : false, message : "Not authorized Login Admin" });
         }
 
-        // console.log(atoken)
-        console.log(process.env.PRIVATE_KEY)
-
         const token_decode = jwt.verify(atoken, process.env.PRIVATE_KEY);
         let s = (process.env.ADMIN_EMAIL + process.env.ADMIN_PASSWORD);
         console.log(s)

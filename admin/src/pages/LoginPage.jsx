@@ -54,11 +54,11 @@ export default function LoginPage(){
                 <p className="text-2xl font-semibold m-auto"><span className="text-[#284B63] text-4xl">{state}</span> Login</p>
                 <div className="w-full">
                     <p>Email</p>
-                    <input type="email" onChange={(e) => setEmail(e.target.value)} value={email} className="border border-gray-300 focus:border-[#284B63] focus:outline-none rounded w-full p-2 mt-1" required/>
+                    <input type="email" onChange={(e) => setEmail(e.target.value)} value={email} className="border border-gray-300 focus:border-[#284B63] focus:outline-none rounded w-full p-2 mt-1"  placeholder={state === 'Admin' ? 'admin@example.com' : 'jason.miller@example.com'} required/>
                 </div>
                 <div className="w-full">
                     <p>Password</p>
-                    <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} className="border border-gray-300 focus:border-[#284B63] focus:outline-none rounded w-full p-2 mt-1" required/>
+                    <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} className="border border-gray-300 focus:border-[#284B63] focus:outline-none rounded w-full p-2 mt-1" placeholder={state === 'Admin' ? 'admin@123456' : 'JasonPass789!'} required/>
                 </div>
            <button className="bg-[#284B63] cursor-pointer text-white w-full py-2 rounded-md text-base">Login</button>
            {
