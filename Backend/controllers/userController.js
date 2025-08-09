@@ -29,6 +29,11 @@ const signUpUser = async (req, res) => {
       password: hashPasssword,
     };
 
+    const emailExist = await userModel.findOne({ email });
+    if(emailExist){
+      return res.json({success : false, message : "User email already exists"});
+    }
+
     const newUser = new userModel(userData);
     const user = await newUser.save();
     const token = jwt.sign({ id: user._id }, process.env.PRIVATE_KEY, { expiresIn: "7d" });
