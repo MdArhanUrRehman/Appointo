@@ -26,15 +26,15 @@ app.use("/appointo/user", userRouter);
 app.use("/appointo/admin", adminRouter);
 app.use("/appointo/doctor", doctorRouter);
 
-app.all("{*splat}", (req, res, next) => {
-  next(new ExpressError(404, "Page not found"));
-});
+// app.all("{*splat}", (req, res, next) => {
+//   next(new ExpressError(404, "Page not found"));
+// });
 
-app.use((err, req, res, next) => {
-  let { statusCode = 500, message = "Something went wrong" } = err;
-  res.status(statusCode).send(err.stack);
-});
+// app.use((err, req, res, next) => {
+//   let { statusCode = 500, message = "Something went wrong" } = err;
+//   res.status(statusCode).send(err.stack);
+// });
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, () => {
   console.log(`Server started on PORT ${port}`);
 });
