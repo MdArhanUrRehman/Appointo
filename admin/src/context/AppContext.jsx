@@ -5,7 +5,7 @@ export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
     const currency = import.meta.env.VITE_CURRENCY;
-    const backendUrl = "https://appointo-backend-fn6i.onrender.com/";
+    const backendUrl = "https://appointo-backend-fn6i.onrender.com";
 
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
