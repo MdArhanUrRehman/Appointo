@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 export const DoctorContext = createContext();
 
 const DoctorContextProvider = (props) => {
-  const backendUrl = "https://appointo-backend-fn6i.onrender.com/";
+  const backendUrl = "https://appointo-backend-fn6i.onrender.com";
 
   const [appointments, setAppointments] = useState([]);
   const [profileData, setProfileData] = useState(false);
