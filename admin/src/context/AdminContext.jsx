@@ -5,7 +5,7 @@ import axios from "axios";
 export const AdminContext = createContext();
 
 const AdminContextProvider = (props) => {
-    const backendUrl = import.meta.env.VITE_BACKEND_URL
+    const backendUrl = "https://appointo-backend-fn6i.onrender.com/"
 
     const [aToken, setAToken] = useState(localStorage.getItem('aToken') ? localStorage.getItem('aToken') : '')
 
