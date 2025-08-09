@@ -6,7 +6,7 @@ export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
   const currencySymbol = "₹";
-  const backendUrl = "https://appointo-backend-fn6i.onrender.com/";
+  const backendUrl = "https://appointo-backend-fn6i.onrender.com";
 
   const [doctor, setDoctors] = useState([]);
   const [token, setToken] = useState(
