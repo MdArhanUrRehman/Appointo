@@ -10,7 +10,6 @@ import doctorRouter from "./routes/doctorRoute.js";
 
 const app = express();
 const port = process.env.PORT || 8080
-connectDB();
 connectCloudinary();
 
 app.use(cors());
@@ -35,6 +34,8 @@ app.use("/appointo/doctor", doctorRouter);
 //   res.status(statusCode).send(err.stack);
 // });
 
-app.listen(port, () => {
-  console.log(`Server started on PORT ${port}`);
+connectDB().then(() => {
+  app.listen(port, "0.0.0.0", () => {
+    console.log(`Server running on port ${port}`);
+  });
 });
